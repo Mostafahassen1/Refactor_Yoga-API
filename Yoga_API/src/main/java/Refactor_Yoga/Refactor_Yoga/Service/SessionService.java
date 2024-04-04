@@ -17,6 +17,7 @@ import java.util.stream.Collectors;
 @Service
 public class SessionService implements BaseService<SessionDTO , Session>{
 
+    private  Session session ;
     private SessionRepository sessionRepository ;
     private SessionMapper sessionMapper ;
 
@@ -32,7 +33,7 @@ public class SessionService implements BaseService<SessionDTO , Session>{
     public SessionDTO getById(String id) {
 
         UUID uuid = UUID.fromString(id) ;
-        Session session = sessionRepository.getById(uuid) ;
+         session = sessionRepository.getById(uuid) ;
         return sessionMapper.SessionTOSessionDTO(session) ;
     }
 
@@ -46,7 +47,7 @@ public class SessionService implements BaseService<SessionDTO , Session>{
                 .collect(Collectors.toList());
     }
 
-    @Override
+
     public void delete(String id) {
         UUID uuid = UUID.fromString(id) ;
         sessionRepository.deleteById(uuid);
@@ -56,7 +57,7 @@ public class SessionService implements BaseService<SessionDTO , Session>{
     @Override
     public void save(SessionDTO object) {
 
-        Session session = sessionMapper.SessionDTOToSession(object) ;
+         session = sessionMapper.SessionDTOToSession(object) ;
         sessionRepository.save(session) ;
     }
 }

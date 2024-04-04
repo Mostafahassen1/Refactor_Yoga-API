@@ -12,7 +12,7 @@ public interface BaseService<DTO , entity> {
     List<DTO> getAll() ;
 
 
-    void delete( String  id) ;
+
 
     void save(DTO object) ;
 
