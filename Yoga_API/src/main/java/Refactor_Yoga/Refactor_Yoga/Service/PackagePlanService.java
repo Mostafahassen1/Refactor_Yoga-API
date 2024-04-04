@@ -18,8 +18,7 @@ public class PackagePlanService implements  BaseService<PackagePlanDTO , Package
     private PackagePlanMapper packagePlanMapper ;
     private PakagePlanRepository  packagePlanRepository ;
 
-    public PackagePlanService() {
-    }
+
 
     public PackagePlanService(PackagePlanMapper packagePlanMapper, PakagePlanRepository pakagePlanRepository) {
         this.packagePlanMapper = packagePlanMapper;

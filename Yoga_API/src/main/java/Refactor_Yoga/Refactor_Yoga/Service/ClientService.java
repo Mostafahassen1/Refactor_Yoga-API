@@ -14,12 +14,11 @@ import java.util.stream.Collectors;
 @Service
 public class ClientService implements BaseService<ClientDTO , Client> {
 
-    private  Client client ;
+
     private ClientRepository clientRepository ;
     private ClientMapper  clientMapper ;
 
-    public ClientService() {
-    }
+
 
     public ClientService(ClientRepository clientRepository, ClientMapper clientMapper) {
         this.clientRepository = clientRepository;
@@ -30,7 +29,7 @@ public class ClientService implements BaseService<ClientDTO , Client> {
     public ClientDTO getById(String id) {
         UUID uuid = UUID.fromString(id) ;
 
-         client = clientRepository.getById(uuid) ;
+        Client client = clientRepository.getById(uuid) ;
 
         return clientMapper.ClientToClientDTO(client) ;
     }
@@ -63,7 +62,7 @@ public class ClientService implements BaseService<ClientDTO , Client> {
     @Override
     public void save( ClientDTO object)
     {
-        client = clientMapper.ClientDTOToClient(object);
+        Client client= clientMapper.ClientDTOToClient(object);
         clientRepository.save(client);
     }
 

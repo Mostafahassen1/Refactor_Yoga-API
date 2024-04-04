@@ -21,8 +21,7 @@ public class SessionService implements BaseService<SessionDTO , Session>{
     private SessionRepository sessionRepository ;
     private SessionMapper sessionMapper ;
 
-    public SessionService() {
-    }
+
 
     public SessionService(SessionRepository sessionRepository, SessionMapper sessionMapper) {
         this.sessionRepository = sessionRepository;

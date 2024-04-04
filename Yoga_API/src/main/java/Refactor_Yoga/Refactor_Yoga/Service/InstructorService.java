@@ -20,8 +20,6 @@ public class InstructorService implements BaseService<InstructorDTO , Instructor
     private InstructorRepository instructorRepository ;
     private InstructorMapper instructorMapper ;
 
-    public InstructorService() {
-    }
 
     public InstructorService(InstructorRepository instructorRepository, InstructorMapper instructorMapper) {
         this.instructorRepository = instructorRepository;

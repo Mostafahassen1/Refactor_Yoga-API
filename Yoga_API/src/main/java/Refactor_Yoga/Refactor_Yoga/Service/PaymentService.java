@@ -17,8 +17,7 @@ public class PaymentService implements BaseService<PaymentDTO, Payment> {
     private PaymentMapper paymentMapper ;
     private PaymentRepository paymentRepository ;
 
-    public PaymentService() {
-    }
+
 
     public PaymentService(PaymentMapper paymentMapper, PaymentRepository paymentRepository) {
         this.paymentMapper = paymentMapper;

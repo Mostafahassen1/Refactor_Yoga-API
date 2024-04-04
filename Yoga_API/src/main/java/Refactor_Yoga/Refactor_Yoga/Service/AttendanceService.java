@@ -21,8 +21,7 @@ public class AttendanceService implements BaseService<AttendanceDTO , Attendance
     private AttendanceMapper attendanceMapper ;
     private AttendanceRepository attendanceRepository ;
 
-    public AttendanceService() {
-    }
+
 
     public AttendanceService(AttendanceMapper attendanceMapper, AttendanceRepository attendanceRepository) {
         this.attendanceMapper = attendanceMapper;
