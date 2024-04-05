@@ -1,11 +1,9 @@
 
 package Refactor_Yoga.Refactor_Yoga.entity;
 
-import Refactor_Yoga.Refactor_Yoga.entity.Client;
-import Refactor_Yoga.Refactor_Yoga.entity.UserClassCompositeKey;
+import Refactor_Yoga.Refactor_Yoga.util.UserClassCompositeKey;
 import jakarta.persistence.*;
 
-import javax.xml.crypto.Data;
 import java.time.LocalDateTime;
 
 @Entity
