@@ -3,7 +3,7 @@ package Refactor_Yoga.Refactor_Yoga.Service;
 
 import Refactor_Yoga.Refactor_Yoga.DTO.AttendanceDTO;
 import Refactor_Yoga.Refactor_Yoga.entity.Attendance;
-import Refactor_Yoga.Refactor_Yoga.entity.UserClassCompositeKey;
+import Refactor_Yoga.Refactor_Yoga.util.UserClassCompositeKey;
 import Refactor_Yoga.Refactor_Yoga.entitymapper.AttendanceMapper;
 import Refactor_Yoga.Refactor_Yoga.repository.AttendanceRepository;
 import org.springframework.stereotype.Service;
