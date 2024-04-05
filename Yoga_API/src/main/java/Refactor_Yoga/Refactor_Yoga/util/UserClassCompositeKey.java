@@ -1,4 +1,4 @@
-package Refactor_Yoga.Refactor_Yoga.entity;
+package Refactor_Yoga.Refactor_Yoga.util;
 
 
 import jakarta.persistence.Column;
