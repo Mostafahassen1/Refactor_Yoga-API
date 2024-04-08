@@ -1,12 +1,9 @@
 package Refactor_Yoga.Refactor_Yoga.Service;
 
 import Refactor_Yoga.Refactor_Yoga.DTO.ClientDTO;
-import Refactor_Yoga.Refactor_Yoga.DTO.InstructorDTO;
 import Refactor_Yoga.Refactor_Yoga.DTO.SessionDTO;
-import Refactor_Yoga.Refactor_Yoga.entity.Client;
 import Refactor_Yoga.Refactor_Yoga.entity.Session;
 import Refactor_Yoga.Refactor_Yoga.entitymapper.SessionMapper;
-import Refactor_Yoga.Refactor_Yoga.repository.InstructorRepository;
 import Refactor_Yoga.Refactor_Yoga.repository.SessionRepository;
 import org.springframework.stereotype.Service;
 
@@ -58,5 +55,6 @@ public class SessionService implements BaseService<SessionDTO , Session>{
 
          session = sessionMapper.SessionDTOToSession(object) ;
         sessionRepository.save(session) ;
+
     }
 }

@@ -2,6 +2,7 @@ package Refactor_Yoga.Refactor_Yoga.Service;
 
 
 import Refactor_Yoga.Refactor_Yoga.DTO.AttendanceDTO;
+import Refactor_Yoga.Refactor_Yoga.DTO.ClientDTO;
 import Refactor_Yoga.Refactor_Yoga.entity.Attendance;
 import Refactor_Yoga.Refactor_Yoga.util.UserClassCompositeKey;
 import Refactor_Yoga.Refactor_Yoga.entitymapper.AttendanceMapper;
@@ -64,5 +65,6 @@ public class AttendanceService implements BaseService<AttendanceDTO , Attendance
 
         attendance = attendanceMapper.DTO_TO_ATTENDANCE(object) ;
         attendanceRepository.save(attendance) ;
+
     }
 }

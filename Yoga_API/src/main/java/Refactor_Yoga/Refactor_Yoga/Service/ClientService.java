@@ -53,17 +53,18 @@ public class ClientService implements BaseService<ClientDTO , Client> {
         if(clientRepository.existsById(uuid))
             clientRepository.deleteById(uuid);
         else
-            throw new NoSuchElementException();
+            throw new NoSuchElementException("this Element is not found ");
 
 
 
     }
 
     @Override
-    public void save( ClientDTO object)
+    public void save(ClientDTO object)
     {
         Client client= clientMapper.ClientDTOToClient(object);
         clientRepository.save(client);
+
     }
 
 
