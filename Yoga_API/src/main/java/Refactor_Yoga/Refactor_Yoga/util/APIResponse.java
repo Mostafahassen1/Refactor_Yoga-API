@@ -22,6 +22,10 @@ public class APIResponse<T> {
         return new APIResponse<>(400 , "This is a bad Request" , null ) ;
     }
 
+    public static <T> APIResponse<T> deleted(){
+        return  new APIResponse<>(204 , "Object deleted successfully" , null ) ;
+    }
+
     public int getStatus() {
         return status;
     }
