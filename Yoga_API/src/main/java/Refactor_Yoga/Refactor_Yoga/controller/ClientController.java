@@ -4,6 +4,7 @@ package Refactor_Yoga.Refactor_Yoga.controller;
 import Refactor_Yoga.Refactor_Yoga.DTO.ClientDTO;
 import Refactor_Yoga.Refactor_Yoga.Service.ClientService;
 import Refactor_Yoga.Refactor_Yoga.entity.Client;
+import Refactor_Yoga.Refactor_Yoga.util.APIResponse;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,25 +23,34 @@ public class ClientController {
     }
 
     @GetMapping("/{id}")
-    public ClientDTO getClientById(@PathVariable String  id){
+    public APIResponse<ClientDTO> getClientById(@PathVariable String  id){
         ClientDTO client = clientService.getById(id) ;
-        return  client ;
+        return  APIResponse.ok(client) ;
     }
 
     @GetMapping("/")
-    public List<ClientDTO> getAllClients(){
+    public APIResponse<List<ClientDTO> >getAllClients(){
         List<ClientDTO>  clients = clientService.getAll() ;
-        return clients ;
+        if( clients.isEmpty() )
+            return  APIResponse.notFound();
+        else
+        return APIResponse.ok(clients) ;
 
     }
 
     @PostMapping("/")
-    public void Save( @RequestBody ClientDTO object){
-        clientService.save(object) ;
+    public APIResponse<ClientDTO> Save( @RequestBody ClientDTO object){
+        
+            clientService.save(object) ;
+
+        return APIResponse.ok(object) ;
+
     }
 
     @DeleteMapping("/{id}")
-    public void deeleteClient( @PathVariable String  id){
+    public APIResponse<ClientDTO> deleteClient( @PathVariable String  id){
         clientService.delete(id);
+        return  APIResponse.deleted();
+
     }
 }
