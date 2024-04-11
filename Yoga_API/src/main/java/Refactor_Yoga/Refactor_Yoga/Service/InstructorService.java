@@ -14,7 +14,7 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
-public class InstructorService implements BaseService<InstructorDTO , InstructorRepository> {
+public class InstructorService implements BaseService<InstructorDTO , Instructor> {
 
     private  Instructor  instructor ;
     private InstructorRepository instructorRepository ;
@@ -56,9 +56,9 @@ public class InstructorService implements BaseService<InstructorDTO , Instructor
     }
 
     @Override
-    public void save(InstructorDTO object) {
+    public void save(Instructor object) {
 
-        instructor = instructorMapper.DTO_TO_INSTRUCTOR(object) ;
+
         instructorRepository.save(instructor) ;
 
     }

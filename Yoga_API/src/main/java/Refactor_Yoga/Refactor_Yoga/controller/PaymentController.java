@@ -4,6 +4,7 @@ import Refactor_Yoga.Refactor_Yoga.DTO.ClientDTO;
 import Refactor_Yoga.Refactor_Yoga.DTO.PaymentDTO;
 import Refactor_Yoga.Refactor_Yoga.Service.ClientService;
 import Refactor_Yoga.Refactor_Yoga.Service.PaymentService;
+import Refactor_Yoga.Refactor_Yoga.entity.Payment;
 import Refactor_Yoga.Refactor_Yoga.util.APIResponse;
 import org.springframework.web.bind.annotation.*;
 
@@ -37,7 +38,7 @@ public class PaymentController {
     }
 
     @PostMapping("/")
-    public APIResponse<PaymentDTO> Save( @RequestBody PaymentDTO object){
+    public APIResponse<Payment> Save( @RequestBody Payment object){
 
         paymentService.save(object) ;
 

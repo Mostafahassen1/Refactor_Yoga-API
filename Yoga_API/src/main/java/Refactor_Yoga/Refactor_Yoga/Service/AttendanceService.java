@@ -15,7 +15,7 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
-public class AttendanceService implements BaseService<AttendanceDTO , AttendanceService> {
+public class AttendanceService implements BaseService<AttendanceDTO , Attendance> {
 
 
     private  Attendance attendance ;
@@ -61,9 +61,9 @@ public class AttendanceService implements BaseService<AttendanceDTO , Attendance
     }
 
     @Override
-    public void save(AttendanceDTO object) {
+    public void save(Attendance object) {
 
-        attendance = attendanceMapper.DTO_TO_ATTENDANCE(object) ;
+
         attendanceRepository.save(attendance) ;
 
     }

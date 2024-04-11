@@ -51,10 +51,10 @@ public class SessionService implements BaseService<SessionDTO , Session>{
     }
 
     @Override
-    public void save(SessionDTO object) {
+    public void save(Session object) {
 
-         session = sessionMapper.SessionDTOToSession(object) ;
-        sessionRepository.save(session) ;
+
+        sessionRepository.save(object) ;
 
     }
 }

@@ -52,9 +52,9 @@ public class PackagePlanService implements  BaseService<PackagePlanDTO , Package
     }
 
     @Override
-    public void save(PackagePlanDTO object) {
+    public void save(PackagePlan object) {
 
-         packagePlan = packagePlanMapper.DTO_TO_PACKAGE_PLAN(object) ;
+
         packagePlanRepository.save(packagePlan) ;
 
 

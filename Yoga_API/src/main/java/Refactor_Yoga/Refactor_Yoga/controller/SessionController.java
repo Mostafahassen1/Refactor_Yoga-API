@@ -4,6 +4,7 @@ import Refactor_Yoga.Refactor_Yoga.DTO.ClientDTO;
 import Refactor_Yoga.Refactor_Yoga.DTO.SessionDTO;
 import Refactor_Yoga.Refactor_Yoga.Service.ClientService;
 import Refactor_Yoga.Refactor_Yoga.Service.SessionService;
+import Refactor_Yoga.Refactor_Yoga.entity.Session;
 import Refactor_Yoga.Refactor_Yoga.util.APIResponse;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,7 +36,7 @@ public class SessionController {
     }
 
     @PostMapping("/")
-    public APIResponse<SessionDTO> Save( @RequestBody SessionDTO object){
+    public APIResponse<Session> Save( @RequestBody Session object){
 
         sessionService.save(object) ;
 

@@ -60,10 +60,10 @@ public class ClientService implements BaseService<ClientDTO , Client> {
     }
 
     @Override
-    public void save(ClientDTO object)
+    public void save( Client object)
     {
-        Client client= clientMapper.ClientDTOToClient(object);
-        clientRepository.save(client);
+
+        clientRepository.save(object);
 
     }
 

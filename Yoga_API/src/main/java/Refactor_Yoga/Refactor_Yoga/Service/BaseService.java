@@ -11,6 +11,6 @@ public interface BaseService<DTO , entity> {
     List<DTO> getAll() ;
 
 
-    void save(DTO object) ;
+    void save(entity object) ;
 
 }

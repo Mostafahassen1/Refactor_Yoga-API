@@ -4,6 +4,7 @@ import Refactor_Yoga.Refactor_Yoga.DTO.ClientDTO;
 import Refactor_Yoga.Refactor_Yoga.DTO.PackagePlanDTO;
 import Refactor_Yoga.Refactor_Yoga.Service.ClientService;
 import Refactor_Yoga.Refactor_Yoga.Service.PackagePlanService;
+import Refactor_Yoga.Refactor_Yoga.entity.PackagePlan;
 import Refactor_Yoga.Refactor_Yoga.util.APIResponse;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,7 +37,7 @@ public class PackagePlanConstructor {
     }
 
     @PostMapping("/")
-    public APIResponse<PackagePlanDTO> Save( @RequestBody PackagePlanDTO object){
+    public APIResponse<PackagePlan> Save( @RequestBody PackagePlan object){
 
         packagePlanService.save(object) ;
 

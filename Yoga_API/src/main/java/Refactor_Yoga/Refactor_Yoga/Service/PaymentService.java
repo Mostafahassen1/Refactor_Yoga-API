@@ -58,10 +58,10 @@ public class PaymentService implements BaseService<PaymentDTO, Payment> {
     }
 
     @Override
-    public void save(PaymentDTO object) {
+    public void save(Payment object) {
 
-         payment = paymentMapper.DTO_TO_PAYMENT(object) ;
-        paymentRepository.save(payment) ;
+
+        paymentRepository.save(object) ;
 
 
     }

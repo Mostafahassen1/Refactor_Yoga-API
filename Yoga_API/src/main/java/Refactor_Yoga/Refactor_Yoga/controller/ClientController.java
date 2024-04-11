@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
-
 @RestController
 @RequestMapping("/api/v1/clients")
 public class ClientController {
@@ -39,7 +37,7 @@ public class ClientController {
     }
 
     @PostMapping("/")
-    public APIResponse<ClientDTO> Save( @RequestBody ClientDTO object){
+    public APIResponse<Client> Save(@RequestBody Client object){
         
             clientService.save(object) ;
 

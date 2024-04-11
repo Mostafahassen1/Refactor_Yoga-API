@@ -4,6 +4,7 @@ import Refactor_Yoga.Refactor_Yoga.DTO.ClientDTO;
 import Refactor_Yoga.Refactor_Yoga.DTO.InstructorDTO;
 import Refactor_Yoga.Refactor_Yoga.Service.ClientService;
 import Refactor_Yoga.Refactor_Yoga.Service.InstructorService;
+import Refactor_Yoga.Refactor_Yoga.entity.Instructor;
 import Refactor_Yoga.Refactor_Yoga.util.APIResponse;
 import org.springframework.web.bind.annotation.*;
 
@@ -37,7 +38,7 @@ public class InstructorController {
     }
 
     @PostMapping("/")
-    public APIResponse<InstructorDTO> Save( @RequestBody InstructorDTO object){
+    public APIResponse<Instructor> Save( @RequestBody Instructor object){
 
         instructorService.save(object) ;
 
