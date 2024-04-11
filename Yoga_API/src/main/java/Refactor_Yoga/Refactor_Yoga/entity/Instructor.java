@@ -13,7 +13,8 @@ public class Instructor {
     public Instructor() {
     }
 
-    public Instructor(String firstName, String lastName, String phone, String email, int salary) {
+    public Instructor(String firstName,String password ,String lastName, String phone, String email, int salary) {
+        this.password = password ;
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
@@ -25,8 +26,8 @@ public class Instructor {
     @Id
     @GeneratedValue( strategy = GenerationType.UUID)
     private UUID id ;
-
-
+@Column(name= "password" , nullable = false)
+  private String password ;
     @Column( name= "first_name" , nullable = false , length = 30)
     private String firstName ;
 
@@ -40,6 +41,14 @@ public class Instructor {
 
     @Column(nullable = false)
     private int salary ;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public UUID getId() {
         return id;
