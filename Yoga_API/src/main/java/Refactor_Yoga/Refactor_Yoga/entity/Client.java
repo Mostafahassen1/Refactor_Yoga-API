@@ -21,27 +21,31 @@ public class Client {
 
     @Id
     @GeneratedValue( strategy = GenerationType.UUID)
-    UUID id ;
+    private UUID id ;
 
 
     @Column( name= "first_name" , nullable = false , length = 50  )
-    String firstName ;
+    private String firstName ;
+
+    @Column( name = "password"    )
+    private String password ;
 
     @Column( name= "last_name" , nullable = false , length = 50)
-    String lastName ;
+    private String lastName ;
 
     @Column( unique = true , nullable = false)
-    String phone ;
+   private String phone ;
 
     @Column ( unique = true , nullable = true )
-    String email ;
+   private String email ;
 
-    String nationality ;
+   private String nationality ;
 
 
-    public Client( String firstName, String lastName, String phone, String email, String nationality) {
+    public Client( String firstName, String password , String lastName, String phone, String email, String nationality) {
 
         this.firstName = firstName;
+        this.password = password ;
         this.lastName = lastName;
         this.phone = phone;
         this.email = email;
@@ -49,6 +53,14 @@ public class Client {
     }
 
     public Client() {
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public UUID getId() {
