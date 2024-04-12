@@ -126,6 +126,8 @@ public class Client {
     public void setAttendanceList(List<Attendance> attendanceList) {
         this.attendanceList = attendanceList;
     }
+
+
 }
 
 

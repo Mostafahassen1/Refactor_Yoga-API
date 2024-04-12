@@ -36,7 +36,7 @@ public class ClientController {
 
     }
 
-    @PostMapping("/")
+    @PostMapping("/register")
     public APIResponse<Client> Save(@RequestBody Client object){
         
             clientService.save(object) ;

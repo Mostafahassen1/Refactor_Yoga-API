@@ -4,6 +4,7 @@ import Refactor_Yoga.Refactor_Yoga.DTO.ClientDTO;
 import Refactor_Yoga.Refactor_Yoga.entity.Client;
 import Refactor_Yoga.Refactor_Yoga.entitymapper.ClientMapper;
 import Refactor_Yoga.Refactor_Yoga.repository.ClientRepository;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,12 +18,15 @@ public class ClientService implements BaseService<ClientDTO , Client> {
 
     private ClientRepository clientRepository ;
     private ClientMapper  clientMapper ;
+    private PasswordEncoder passwordEncoder;
 
 
 
-    public ClientService(ClientRepository clientRepository, ClientMapper clientMapper) {
+
+    public ClientService(PasswordEncoder passwordEncoder ,ClientRepository clientRepository, ClientMapper clientMapper) {
         this.clientRepository = clientRepository;
         this.clientMapper = clientMapper;
+        this.passwordEncoder = passwordEncoder ;
     }
 
     @Override
@@ -62,6 +66,9 @@ public class ClientService implements BaseService<ClientDTO , Client> {
     @Override
     public void save( Client object)
     {
+
+        String hashPassword = passwordEncoder.encode(object.getPassword()) ;
+      object.setPassword(hashPassword);
 
         clientRepository.save(object);
 
