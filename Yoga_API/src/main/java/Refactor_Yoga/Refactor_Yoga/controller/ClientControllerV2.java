@@ -25,9 +25,11 @@ public class ClientControllerV2 {
     @PostMapping("/register")
     public APIResponse<Client> Save(@RequestBody Client object){
 
+
         clientService.save(object) ;
 
         return APIResponse.ok(object) ;
+
 
     }
 
