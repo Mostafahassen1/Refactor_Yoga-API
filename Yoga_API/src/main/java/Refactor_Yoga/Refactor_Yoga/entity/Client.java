@@ -1,6 +1,7 @@
 
 package Refactor_Yoga.Refactor_Yoga.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -12,10 +13,11 @@ import java.util.UUID;
 public class Client {
 
 
-
+    @JsonIgnore
     @OneToMany(mappedBy = "client")
     private  List<Payment> paymentList ;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "client")
     private List<Attendance> attendanceList ;
 
