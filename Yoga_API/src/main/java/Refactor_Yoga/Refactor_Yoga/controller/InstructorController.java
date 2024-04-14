@@ -37,7 +37,7 @@ public class InstructorController {
 
     }
 
-    @PostMapping("/")
+    @PostMapping("/register")
     public APIResponse<Instructor> Save( @RequestBody Instructor object){
 
         instructorService.save(object) ;

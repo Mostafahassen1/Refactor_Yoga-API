@@ -6,6 +6,7 @@ import Refactor_Yoga.Refactor_Yoga.DTO.InstructorDTO;
 import Refactor_Yoga.Refactor_Yoga.entity.Instructor;
 import Refactor_Yoga.Refactor_Yoga.entitymapper.InstructorMapper;
 import Refactor_Yoga.Refactor_Yoga.repository.InstructorRepository;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,20 +17,21 @@ import java.util.stream.Collectors;
 @Service
 public class InstructorService implements BaseService<InstructorDTO , Instructor> {
 
-    private  Instructor  instructor ;
+   private   PasswordEncoder passwordEncoder  ;
     private InstructorRepository instructorRepository ;
     private InstructorMapper instructorMapper ;
 
 
-    public InstructorService(InstructorRepository instructorRepository, InstructorMapper instructorMapper) {
+    public InstructorService( PasswordEncoder passwordEncoder ,InstructorRepository instructorRepository, InstructorMapper instructorMapper) {
         this.instructorRepository = instructorRepository;
         this.instructorMapper = instructorMapper;
+        this.passwordEncoder = passwordEncoder ;
     }
 
     @Override
     public InstructorDTO getById(String id) {
         UUID uuid = UUID.fromString(id) ;
-          instructor = instructorRepository.getById(uuid) ;
+        Instructor instructor = instructorRepository.getById(uuid) ;
           return instructorMapper.INSTRUCTOR_TO_DTO(instructor) ;
 
 
@@ -59,7 +61,11 @@ public class InstructorService implements BaseService<InstructorDTO , Instructor
     public void save(Instructor object) {
 
 
-        instructorRepository.save(instructor) ;
+           String hashPassword = passwordEncoder.encode(object.getPassword()) ;
+           object.setPassword(hashPassword);
+
+
+        instructorRepository.save(object) ;
 
     }
 }
