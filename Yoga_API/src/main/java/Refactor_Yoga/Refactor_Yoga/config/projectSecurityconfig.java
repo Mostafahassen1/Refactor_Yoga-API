@@ -26,8 +26,20 @@ public class projectSecurityconfig {
     @Bean
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests((requests) -> {
-                    requests.requestMatchers("/api/v2/**").permitAll();  // Allow access to "/log" without authentication
-                    requests.requestMatchers("/api/v1/**").authenticated();  // Secure all paths under "/account" and "/users"
+
+                    requests.requestMatchers("/api/v1/clients/**" ).hasAnyRole("USER" , "INSTRUCTOR") ;
+
+                   requests.requestMatchers(HttpMethod.POST ,"/api/v1/**").hasRole("INSTRUCTOR");
+                    requests.requestMatchers(HttpMethod.DELETE,"/api/v1/**").hasRole("INSTRUCTOR");
+
+                   requests.requestMatchers(HttpMethod.GET ,"/api/v1/instructors/**").hasAnyRole("USER" , "INSTRUCTOR" );
+                    requests.requestMatchers(HttpMethod.GET ,"/api/v1/payments/**").hasRole( "INSTRUCTOR" );
+                   requests.requestMatchers(HttpMethod.GET ,"/api/v1/sessions/**").hasAnyRole("USER" , "INSTRUCTOR" );
+
+
+                    requests.requestMatchers("/api/v2/**"  ).permitAll();  // Allow access to "/log" without authentication
+                    requests.requestMatchers( HttpMethod.GET , "/api/v1/packages/").permitAll();
+
                     requests.anyRequest().authenticated();    // Require authentication for all other paths
                 })
                 .formLogin(Customizer.withDefaults())
