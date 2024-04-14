@@ -13,8 +13,9 @@ public class Instructor {
     public Instructor() {
     }
 
-    public Instructor(String firstName, String lastName, String phone, String email, int salary) {
+    public Instructor(String password ,String firstName, String lastName, String phone, String email, int salary) {
         this.firstName = firstName;
+        this.password = password ;
         this.lastName = lastName;
         this.phone = phone;
         this.email = email;
@@ -38,8 +39,19 @@ public class Instructor {
     @Column( nullable = false , unique = true )
     private String email ;
 
+    @Column( name= "password" , nullable = false )
+    private String password ;
+
     @Column(nullable = false)
     private int salary ;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public UUID getId() {
         return id;
