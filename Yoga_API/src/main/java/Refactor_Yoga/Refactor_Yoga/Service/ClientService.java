@@ -15,18 +15,19 @@ import java.util.stream.Collectors;
 @Service
 public class ClientService implements BaseService<ClientDTO , Client> {
 
-
+    PasswordEncoder passwordEncoder  ;
     private ClientRepository clientRepository ;
     private ClientMapper  clientMapper ;
-    private PasswordEncoder passwordEncoder;
 
 
 
 
-    public ClientService(PasswordEncoder passwordEncoder ,ClientRepository clientRepository, ClientMapper clientMapper) {
+
+    public ClientService( PasswordEncoder passwordEncoder  , ClientRepository clientRepository, ClientMapper clientMapper) {
         this.clientRepository = clientRepository;
         this.clientMapper = clientMapper;
-        this.passwordEncoder = passwordEncoder ;
+        this.passwordEncoder =passwordEncoder ;
+
     }
 
     @Override
@@ -66,6 +67,7 @@ public class ClientService implements BaseService<ClientDTO , Client> {
     @Override
     public void save( Client object)
     {
+
 
         String hashPassword = passwordEncoder.encode(object.getPassword()) ;
       object.setPassword(hashPassword);
