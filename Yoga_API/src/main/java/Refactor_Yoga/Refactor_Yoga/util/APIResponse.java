@@ -11,9 +11,13 @@ public class APIResponse<T> {
         this.data = data;
     }
 
+
+
     public static <T> APIResponse<T> ok(T data){
         return  new APIResponse<>(200 , "Success" , data) ;
     }
+
+
     public static <T> APIResponse<T> notFound(){
         return  new APIResponse<>(404 , "Element is not found" , null) ;
     }
@@ -25,6 +29,8 @@ public class APIResponse<T> {
     public static <T> APIResponse<T> deleted(){
         return  new APIResponse<>(204 , "Object deleted successfully" , null ) ;
     }
+
+
 
     public int getStatus() {
         return status;

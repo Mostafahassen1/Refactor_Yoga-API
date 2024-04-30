@@ -10,7 +10,7 @@ import java.util.UUID;
 
 @Entity
 @Table( name ="client")
-public class Client {
+public class Client  {
 
 
     @JsonIgnore

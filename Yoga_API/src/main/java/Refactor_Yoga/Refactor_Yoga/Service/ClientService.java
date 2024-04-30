@@ -1,9 +1,12 @@
 package Refactor_Yoga.Refactor_Yoga.Service;
 
 import Refactor_Yoga.Refactor_Yoga.DTO.ClientDTO;
+import Refactor_Yoga.Refactor_Yoga.config.JwtService;
 import Refactor_Yoga.Refactor_Yoga.entity.Client;
 import Refactor_Yoga.Refactor_Yoga.entitymapper.ClientMapper;
 import Refactor_Yoga.Refactor_Yoga.repository.ClientRepository;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -20,14 +23,17 @@ public class ClientService implements BaseService<ClientDTO , Client> {
     private ClientMapper  clientMapper ;
 
 
+    //
+    private JwtService  jwtService ;
+    private AuthenticationManager  authenticationManager ;
 
 
-
-    public ClientService( PasswordEncoder passwordEncoder  , ClientRepository clientRepository, ClientMapper clientMapper) {
+    public ClientService(PasswordEncoder passwordEncoder, ClientRepository clientRepository, ClientMapper clientMapper, JwtService jwtService, AuthenticationManager authenticationManager) {
+        this.passwordEncoder = passwordEncoder;
         this.clientRepository = clientRepository;
         this.clientMapper = clientMapper;
-        this.passwordEncoder =passwordEncoder ;
-
+        this.jwtService = jwtService;
+        this.authenticationManager = authenticationManager;
     }
 
     @Override
@@ -77,5 +83,24 @@ public class ClientService implements BaseService<ClientDTO , Client> {
     }
 
 
+    public String authentication (Client client) {
+        authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(
+                        client.getEmail() ,
+                        client.getPassword()
+                )
+        ) ;
+        Client user = clientRepository.findByEmail(client.getEmail());
+        String jwt = jwtService.generateToken(user);
+        return jwt ;
+    }
+
+
+
 
 }
+
+
+
+
+
