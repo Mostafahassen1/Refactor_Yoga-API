@@ -52,7 +52,7 @@ private  final JwtAuthenticationFilter jwtAuthenticationFilter ;
                    requests.requestMatchers(HttpMethod.POST ,"/api/v1/**").hasRole("INSTRUCTOR");
                     requests.requestMatchers(HttpMethod.DELETE,"/api/v1/**").hasRole("INSTRUCTOR");
 
-                   requests.requestMatchers(HttpMethod.GET ,"/api/v1/instructors/**").hasAnyRole("USER" , "INSTRUCTOR" );
+
                     requests.requestMatchers(HttpMethod.GET ,"/api/v1/payments/**").hasRole( "INSTRUCTOR" );
                    requests.requestMatchers(HttpMethod.GET ,"/api/v1/sessions/**").hasAnyRole("USER" , "INSTRUCTOR" );
 

@@ -36,14 +36,6 @@ public class ClientController {
 
     }
 
-    @PostMapping("/register")
-    public APIResponse<Client> Save(@RequestBody Client object){
-        
-            clientService.save(object) ;
-
-        return APIResponse.ok(object) ;
-
-    }
 
     @DeleteMapping("/{id}")
     public APIResponse<ClientDTO> deleteClient( @PathVariable String  id){

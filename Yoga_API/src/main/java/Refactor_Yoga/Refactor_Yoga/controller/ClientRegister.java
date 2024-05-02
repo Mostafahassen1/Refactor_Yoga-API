@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v2/clients")
-public class ClientControllerV2 {
+public class ClientRegister {
 
     private ClientService clientService ;
     private JwtService jwtService ;
 
     private AuthenticationManager authenticationManager ;
 
-    public ClientControllerV2(ClientService clientService, JwtService jwtService) {
+    public ClientRegister(ClientService clientService, JwtService jwtService) {
         this.clientService = clientService;
         this.jwtService = jwtService;
     }
@@ -32,7 +32,6 @@ public class ClientControllerV2 {
 
 
         return APIResponse.ok(token) ;
-
 
     }
 

@@ -9,5 +9,4 @@ public class RefactorYogaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(RefactorYogaApplication.class, args);
 	}
-
 }

@@ -1,6 +1,7 @@
 
 package Refactor_Yoga.Refactor_Yoga.entity;
 
+import Refactor_Yoga.Refactor_Yoga.Enum.Role;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
@@ -9,7 +10,8 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
-@Table( name ="client")
+//client
+@Table( name ="mempers")
 public class Client  {
 
 
@@ -38,13 +40,19 @@ public class Client  {
     @Column( unique = true , nullable = false)
    private String phone ;
 
-    @Column ( unique = true , nullable = true )
+    @Column ( unique = true , nullable = false )
    private String email ;
 
    private String nationality ;
 
 
-    public Client( String firstName, String password , String lastName, String phone, String email, String nationality) {
+    @Column(name ="Role")
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
+
+
+    public Client( Role role , String firstName, String password , String lastName, String phone, String email, String nationality) {
 
         this.firstName = firstName;
         this.password = password ;
@@ -52,10 +60,21 @@ public class Client  {
         this.phone = phone;
         this.email = email;
         this.nationality = nationality;
+        this.role = role ;
     }
 
     public Client() {
     }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+
 
     public String getPassword() {
         return password;
