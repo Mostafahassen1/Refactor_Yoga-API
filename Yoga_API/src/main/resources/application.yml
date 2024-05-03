@@ -10,3 +10,27 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+  cloud:
+    gateway:
+      default-filters:
+        - name: RequestRateLimiter
+          args:
+            redis-rate-limiter.replenishRate: 10
+            redis-rate-limiter.burstCapacity: 20
+      routes:
+        - id: Reverse-Yoga
+          uri: http://localhost:8080
+          predicates:
+            - Path=/api/v1/**
+          filters:
+            - AddRequestHeader=X-Tenant,Yoga_Refactor_gateway
+            - name: Retry
+              args:
+                retries: 3
+                method: GET
+                backoff:
+                  firstBackoff: 50 ms
+                  maxBackoff: 500 ms
+
+
+
