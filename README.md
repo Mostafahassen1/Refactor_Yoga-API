@@ -33,10 +33,9 @@
 ### Testing
 - **Spring Boot Starter Test**: Testing utilities (JUnit, Hamcrest, Mockito).
 
-
-### YAML Configuration
-
-### _______________________________________________________________________________________________________________
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Configuration
+- This project uses a **application.yml** file for configuration instead of the traditional **application.properties** file. 
 
 
 ## To set up the Yoga API, follow these steps:
