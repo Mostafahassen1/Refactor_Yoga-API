@@ -1,7 +1,7 @@
 # Refactor_Yoga-API
 
 ------------------------------------------------------------------------------------------------------
-                 ## Technologies and Frameworks Used
+ ## Technologies and Frameworks Used
 
 ### Programming Language
 - **Java 17**: 
