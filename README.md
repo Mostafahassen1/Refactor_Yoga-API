@@ -1,5 +1,31 @@
 # Refactor_Yoga-API
 
+------------------------------------------------------------------------------------------------------
+## Technologies and Frameworks Used
+
+### Programming Language
+- **Java 17**: 
+
+### Build Tool
+- **Maven**: Dependency management and build automation.
+ 
+
+### Spring Boot
+- **Actuator**: Monitoring and management.
+- **Data JPA**: Database access and ORM with Hibernate.
+- **Web**: Building web applications and RESTful services.
+- **DevTools**: Enhanced development experience.
+- **Security**: Adding security features to the application.
+- **Data Redis Reactive**: Integration with Redis for reactive data access.
+
+### Spring Cloud
+- **Spring Cloud Gateway MVC**:
+- 
+### Database
+- **PostgreSQL**: Database management system.
+
+- ---------------------------------------------------------------------------------------------------------------
+
 To set up the Yoga API, follow these steps:
 
 ## 1. Set up PostgreSQL Database
