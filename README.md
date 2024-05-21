@@ -20,15 +20,27 @@
 
 ### Spring Cloud
 - **Spring Cloud Gateway MVC**:
-- 
+
 ### Database
 - **PostgreSQL**: Database management system.
 
-- ---------------------------------------------------------------------------------------------------------------
+### Authentication
+- **JSON Web Tokens (JWT)**:
+  - **jjwt-api**
+  - **jjwt-impl**
+  - **jjwt-jackson**
 
-To set up the Yoga API, follow these steps:
+### Testing
+- **Spring Boot Starter Test**: Testing utilities (JUnit, Hamcrest, Mockito).
 
-## 1. Set up PostgreSQL Database
+
+### YAML Configuration
+
+
+
+## To set up the Yoga API, follow these steps:
+
+### 1. Set up PostgreSQL Database
 
 First, create a Docker container for the PostgreSQL database:
 
@@ -37,7 +49,7 @@ docker run -p 5432:5432 --name Yoga-postgres -e POSTGRES_USER=yoga -e POSTGRES_P
 ```
 
 
-## 2. Connect Database with Spring
+### 2. Connect Database with Spring
 
 Connect the Yoga API with the PostgreSQL database by configuring the `application.properties` file with the following properties:
 
