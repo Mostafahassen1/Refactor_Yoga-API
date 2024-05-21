@@ -35,7 +35,10 @@
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Configuration
-- This project uses a **application.yml** file for configuration instead of the traditional **application.properties** file. 
+- This project uses a **application.yml** file for configuration instead of the traditional **application.properties** file.
+
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  
 
 
 ## To set up the Yoga API, follow these steps:
