@@ -16,7 +16,7 @@
 - **Web**: Building web applications and RESTful services.
 - **DevTools**: Enhanced development experience.
 - **Security**: Adding security features to the application.
-- **Data Redis Reactive**: Integration with Redis for reactive data access.
+- **Data Redis Reactive**: Integration with Redis for reactive data access( used in gateway ).
 
 ### Spring Cloud
 - **Spring Cloud Gateway MVC**:
@@ -36,6 +36,7 @@
 
 ### YAML Configuration
 
+### _______________________________________________________________________________________________________________
 
 
 ## To set up the Yoga API, follow these steps:
